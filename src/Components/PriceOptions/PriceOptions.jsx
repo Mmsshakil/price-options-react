@@ -35,7 +35,11 @@ const PriceOptions = () => {
                 "LCD display",
                 "Variable resistance levels",
                 "Handlebar grips",
-                "Cup holder"
+                "Cup holder",
+                "Built-in programs",
+                "Dumbbell holders",
+                "Heart rate monitor"
+                
             ],
             "price": 699.00
         }
@@ -46,7 +50,7 @@ const PriceOptions = () => {
     return (
         <div className="m-12">
             <h2 className="text-5xl">Best Prices</h2>
-            <div className="grid grid-cols-3 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                 {
                     priceOptions.map(option => <PriceOption option={option} key={option.id}></PriceOption>)
                 }
