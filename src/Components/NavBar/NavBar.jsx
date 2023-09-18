@@ -17,17 +17,19 @@ const NavBar = () => {
 
 
     return (
-        <nav>
+        <nav className=" text-black bg-yellow-300 p-5">
             {/* this div will hidden in midium size display 
             and when i will click on this part - it will set the value of setOpen of opoosite of the previous value  */}
-            <div className="text-2xl md:hidden" onClick={() => setOpen(!open)}>
+            <div className="text-2xl md:hidden " onClick={() => setOpen(!open)}>
                 {
                     // if the open value is true then show the X sign and if the open value false show the manu icon
                     open === true ? <AiOutlineClose></AiOutlineClose> : <BiAlignRight ></BiAlignRight>
                 }
-                
+
             </div>
-            <ul className="md:flex">
+            <ul className={`md:flex bg-yellow-200 absolute p-5  duration-1000
+            ${open ? 'top-28' : '-top-60'}
+            `}>
                 {
                     routes.map(route => <Link key={route.id} route={route}></Link>)
                 }
